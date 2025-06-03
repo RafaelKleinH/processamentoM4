@@ -27,6 +27,7 @@ struct Image
     unsigned int texture;
     GLuint VAO;
     float rotateXRadius, rotateYRadius;
+    float xScale, yScale;
     float offsetx, offsety, offsetz;
 };
 
@@ -107,70 +108,184 @@ vector<Image *> generateModel()
 {
     vector<Image *> model;
 
+    Image *img10 = new Image;
+    img10->fileName = "images/sky.png";
+    img10->offsetx = ((float)g_gl_width) / 2.0f;
+    img10->offsety =  ((float)g_gl_height) / 2.0f;  
+    img10->rotateXRadius = 0;
+    img10->rotateYRadius = 0;
+    img10->xScale = g_gl_width;
+    img10->yScale =  g_gl_height;
+    img10->VAO = generateVAO(0.5);
+    model.push_back(img10);
+    loadTexture(img10->texture, img10->fileName);
+
+
     Image *img7 = new Image;
     img7->fileName = "images/grass2.png";
-    img7->rotateXRadius = 180;
-    img7->rotateYRadius = 180;
-    //   img7->offsetx = 1;
-    // img7->offsety = 1;
-    img7->VAO = generateVAO(1);
+    img7->offsetx = ((float)g_gl_width) / 2.0f;
+    img7->offsety =  ((float)g_gl_height) / 2.0f;  
+    img7->rotateXRadius = 0;
+    img7->rotateYRadius = 0;
+    img7->xScale = g_gl_width;
+    img7->yScale =  g_gl_height;
+    img7->VAO = generateVAO(0.5);
     model.push_back(img7);
     loadTexture(img7->texture, img7->fileName);
 
     Image *img6 = new Image;
     img6->fileName = "images/grass3.png";
-        //     img6->offsetx = 2;
-        // img6->offsety = 2;
-    img6->VAO = generateVAO(1);
+    img6->offsetx = ((float)g_gl_width) / 2.0f;
+    img6->offsety =  ((float)g_gl_height) / 2.0f;  
+    img6->rotateXRadius = 0;
+    img6->rotateYRadius = 0;
+    img6->xScale = g_gl_width;
+    img6->yScale =  g_gl_height;
+    img6->VAO = generateVAO(0.5);
     model.push_back(img6);
     loadTexture(img6->texture, img6->fileName);
 
     Image *img4 = new Image;
     img4->fileName = "images/grass.png";
-        //        img4->offsetx = -0.5;
-        // img4->offsety = -0.5;
-    img4->VAO = generateVAO(1);
+   img4->offsetx = ((float)g_gl_width) / 2.0f;
+    img4->offsety =  ((float)g_gl_height) / 2.0f;  
+    img4->rotateXRadius = 0;
+    img4->rotateYRadius = 0;
+    img4->xScale = g_gl_width;
+    img4->yScale =  g_gl_height ;
+    img4->VAO = generateVAO(0.5);
     model.push_back(img4);
     loadTexture(img4->texture, img4->fileName);
 
         Image *img8 = new Image;
     img8->fileName = "images/tree1.png";
+    img8->offsetx = ((float)g_gl_width) / 1.1f;
+    img8->offsety =  ((float)g_gl_height) / 3.8f;  
+    img8->rotateXRadius = 0;
+    img8->rotateYRadius = 0;
+    img8->xScale = g_gl_width / 6;
+    img8->yScale =  g_gl_height / 6;
     img8->VAO = generateVAO(0.5);
     model.push_back(img8);
     loadTexture(img8->texture, img8->fileName);
 
         Image *img9 = new Image;
     img9->fileName = "images/tree2.png";
+       img9->offsetx = ((float)g_gl_width) / 8.0f;
+    img9->offsety =  ((float)g_gl_height) / 2.8f;  
+    img9->rotateXRadius = 0;
+    img9->rotateYRadius = 0;
+    img9->xScale = g_gl_width / 4;
+    img9->yScale =  g_gl_height / 4;
     img9->VAO = generateVAO(0.5);
     model.push_back(img9);
     loadTexture(img9->texture, img9->fileName);
 
     Image *img5 = new Image;
     img5->fileName = "images/grass4.png";
-    img5->VAO = generateVAO(1);
+       img5->offsetx = ((float)g_gl_width) / 2.0f;
+    img5->offsety =  ((float)g_gl_height) / 2.0f;  
+    img5->rotateXRadius = 0;
+    img5->rotateYRadius = 0;
+    img5->xScale = g_gl_width ;
+    img5->yScale =  g_gl_height;
+    img5->VAO = generateVAO(0.5);
     model.push_back(img5);
     loadTexture(img5->texture, img5->fileName);
 
-    Image *img0 = new Image;
-    img0->fileName = "images/mobi1.png";
-        //     img0->offsetx = 0.4;
-        // img0->offsety = 0.4;
-    img0->VAO = generateVAO(0.5);
-    model.push_back(img0);
-    loadTexture(img0->texture, img0->fileName);
-
-    Image *img2 = new Image;
-    img2->fileName = "images/mobi2.png";
-        //     img2->offsetx = 0.2;
-        // img2->offsety = 0.2;
+        Image *img2 = new Image;
+    img2->fileName = "images/bwolfRun.png";
+    img2->offsetx = ((float)g_gl_width) / 3.0f;
+    img2->offsety =  ((float)g_gl_height) / 3.50f;  
+    img2->rotateXRadius = 0;
+    img2->rotateYRadius = 0;
+    img2->xScale = g_gl_width / 4;
+    img2->yScale =  g_gl_height / 4.5;
     img2->VAO = generateVAO(0.5);
     model.push_back(img2);
     loadTexture(img2->texture, img2->fileName);
 
+        Image *img0 = new Image;
+    img0->fileName = "images/mobi1.png";
+    img0->offsetx = ((float)g_gl_width) / 8.0f;
+    img0->offsety =  ((float)g_gl_height) / 4.0;  
+    img0->rotateXRadius = 0;
+    img0->rotateYRadius = 0;
+    img0->xScale = g_gl_width / 3;
+    img0->yScale =  g_gl_height / 3;
+    img0->VAO = generateVAO(0.5);
+    model.push_back(img0);
+    loadTexture(img0->texture, img0->fileName);
+
+        Image *img11 = new Image;
+    img11->fileName = "images/wwolfRun.png";
+    img11->offsetx = ((float)g_gl_width) / 100.0f;
+    img11->offsety =  ((float)g_gl_height) / 7.0f;  
+    img11->rotateXRadius = 0;
+    img11->rotateYRadius = 0;
+    img11->xScale = g_gl_width / 4;
+    img11->yScale =  g_gl_height / 5.0;
+    img11->VAO = generateVAO(0.5);
+    model.push_back(img11);
+    loadTexture(img11->texture, img11->fileName);
+
+
+    Image *img12 = new Image;
+    img12->fileName = "images/rwolfRun.png";
+    img12->offsetx = ((float)g_gl_width) / 3.8f;
+    img12->offsety =  ((float)g_gl_height) / 8.0f;  
+    img12->rotateXRadius = 0;
+    img12->rotateYRadius = 0;
+    img12->xScale = g_gl_width / 3.8;
+    img12->yScale =  g_gl_height / 4;
+    img12->VAO = generateVAO(0.5);
+    model.push_back(img12);
+    loadTexture(img12->texture, img12->fileName);
+
+    Image *img14 = new Image;
+    img14->fileName = "images/Arrow.png";
+    img14->offsetx = ((float)g_gl_width) / 1.75f;
+    img14->offsety =  ((float)g_gl_height) / 7.0f;  
+    img14->rotateXRadius = 0;
+    img14->rotateYRadius = 180;
+    img14->xScale = g_gl_width / 4;
+    img14->yScale =  g_gl_height / 4;
+    img14->VAO = generateVAO(0.5);
+    model.push_back(img14);
+    loadTexture(img14->texture, img14->fileName);
+
+    Image *img13 = new Image;
+    img13->fileName = "images/wwolfDead.png";
+    img13->offsetx = ((float)g_gl_width) / 2.0f;
+    img13->offsety =  ((float)g_gl_height) / 6.0f;  
+    img13->rotateXRadius = 0;
+    img13->rotateYRadius = 0;
+    img13->xScale = g_gl_width / 4;
+    img13->yScale =  g_gl_height / 8;
+    img13->VAO = generateVAO(0.5);
+    model.push_back(img13);
+    loadTexture(img13->texture, img13->fileName);
+
+    Image *img15 = new Image;
+    img15->fileName = "images/Shot.png";
+      img15->offsetx = ((float)g_gl_width) / 1.1f;
+    img15->offsety =  ((float)g_gl_height) / 2.4f;  
+    img15->rotateXRadius = 0;
+    img15->rotateYRadius = 180;
+    img15->xScale = g_gl_width / 4;
+    img15->yScale =  g_gl_height / 4;
+    img15->VAO = generateVAO(0.5);
+    model.push_back(img15);
+    loadTexture(img15->texture, img15->fileName);
+
     Image *img1 = new Image;
     img1->fileName = "images/samurai.png";
-        //     img1->offsetx = 0.6;
-        // img1->offsety = 0.6;
+      img1->offsetx = ((float)g_gl_width) / 1.2f;
+    img1->offsety =  ((float)g_gl_height) / 4.0f;  
+    img1->rotateXRadius = 0;
+    img1->rotateYRadius = 180;
+    img1->xScale = g_gl_width / 4;
+    img1->yScale =  g_gl_height / 4;
     img1->VAO = generateVAO(0.5);
     model.push_back(img1);
     loadTexture(img1->texture, img1->fileName);
@@ -246,13 +361,14 @@ int main()
         {
             glBindVertexArray(model[i]->VAO);
 
-           
-            glm::mat4 ViewTranslate = glm::translate(glm::mat4(1.0f), glm::vec3(400.0f, 300.0f, 0.0f));
+
+     
+            glm::mat4 ViewTranslate = glm::translate(glm::mat4(1.0f), glm::vec3(model[i]->offsetx, model[i]->offsety, 0.0f));
             glm::mat4 ViewRotateX = glm::rotate(ViewTranslate, glm::radians(model[i]->rotateXRadius), glm::vec3(-1.0f, 0.0f, 0.0f));
             glm::mat4 view = glm::rotate(ViewRotateX, glm::radians(model[i]->rotateYRadius), glm::vec3(0.0f, 1.0f, 0.0f));
             glm::mat4 scale = glm::scale(
                 glm::mat4(1.0f),
-                glm::vec3(80.0f, 60.0f, 0.0f));
+                glm::vec3(model[i]->xScale, model[i]->yScale, 0.0f));
 
             glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "scale"), 1, GL_FALSE, glm::value_ptr(scale));
             glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "proj"), 1, GL_FALSE, glm::value_ptr(projection));
